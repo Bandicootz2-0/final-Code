@@ -260,10 +260,10 @@ function movement(){
   }
   player.velocityY = player.velocityY + 0.8;
   if(keyDown("left_arrow")){
-    player.x -= 3;
+    player.x -= 6;
   }
   if(keyDown("right_arrow")){
-    player.x += 3;
+    player.x += 6;
   }
   
 }
@@ -333,7 +333,7 @@ function spawnBullets(){
   bullet = createSprite(player.x + 20, player.y -10, 10,10);
   bullet.addImage(bulletimg);
   bullet.scale = 0.20;
-  bullet.velocityX = 2;
+  bullet.velocityX = 5;
   bullet.depth = player.depth;
   player.depth += 1;
   bulletGroup.add(bullet);
@@ -427,37 +427,24 @@ function player2Movement(){
   }
 
   if(keyDown("down_arrow")){
-    player2.y += 2;
+    player2.y += 8;
     player2.addImage(player90)
     direction = "down";
-    if(keyDown("space")){
-      bullet.velocityY =2;
-    }
-    
   }
   if(keyDown("up_arrow")){
-    player2.y -=  2;
+    player2.y -=  8;
     player2.addImage(player270)
     direction = "up"
-    if(keyDown("space")){
-      bullet.velocityY = -2;
-    }
   }
   if(keyDown("left_arrow")){
     player2.addImage(player180)
     direction = "left"
-    if(keyDown("space")){
-      bullet.velocityX = -2;
-    }
-    player2.x -= 3;
+    player2.x -= 8;
   }
   if(keyDown("right_arrow")){
     player2.addImage(player360)
     direction = "right"
-    if(keyDown("space")){
-      bullet.velocityX = 2;
-    }
-    player2.x += 3;
+    player2.x += 8;
   }
 }
 
