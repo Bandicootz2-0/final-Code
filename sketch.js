@@ -122,14 +122,14 @@ function draw(){
             }
         }
 
-    if(health>0 && score>=10){
+    if(health>0 && score== 100){
       gameState= "nextLevelInfo"
       bulletGroup.destroyEach();
       enemyGroup.destroyEach();
       benefitGroup.destroyEach();
       player.visible = false;
     }
-    if(health <=0){
+    if(health ==0){
       gameState= "gameEnd"
       bulletGroup.destroyEach();
       enemyGroup.destroyEach();
@@ -166,7 +166,7 @@ function draw(){
   
       for(var i = 0; i<enemylvl2Group.length; i++){
           if(player2.isTouching(enemylvl2Group.get(i))){
-            health -=50;
+            health -=10;
             enemylvl2Group.get(i).remove();
             bulletGroup2.destroyEach();
           }
@@ -174,13 +174,13 @@ function draw(){
       for(var i = 0; i<benefitGroup.length; i++){
         if(player2.isTouching(benefitGroup.get(i))){
           if(health< 100){
-            health +=50;
+            health +=10;
           }
           benefitGroup.destroyEach();
         }
     }
 
-      if(health >0 && score>=20){
+      if(health >0 && score==100){
         gameState= "win"
         bulletGroup2.destroyEach();
         enemylvl2Group.destroyEach();
